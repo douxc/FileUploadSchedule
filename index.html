@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>File Upload Schedule</title>
+</head>
+
+<body>
+  <button id="selectBtn">选择文件</button>
+  <script src="./FileUploadSchedule.min.js"></script>
+  <script>
+    'use strict';
+    var fileuploadSchedule = new FileUploadSchedule();
+    fileuploadSchedule.upload = function (file, success, fail) {
+      setTimeout(function () {
+        success(file);
+      }, 1000);
+    }
+    document.getElementById('selectBtn').addEventListener('click', function fileSelcetHandler() {
+      fileuploadSchedule.select().then(function () {
+        console.log(fileuploadSchedule)
+        return fileuploadSchedule.startUpload();
+      }).then(function (data) {
+        console.log('upload success', data);
+      }).catch(function (err) {
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+
+</html>

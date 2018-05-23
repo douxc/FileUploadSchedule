@@ -1,0 +1,16 @@
+{
+  "name": "FileUploadSchedule",
+  "version": "1.0.0",
+  "main": "./FileUploadSchedule.min.js",
+  "module": "./FileUploadSchedule.js",
+  "repository": "https://github.com/douxc/FileUploadSchedule.git",
+  "author": "douxc",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build ./FileUploadSchedule.js --out-file FileUploadSchedule.min.js --no-source-maps --out-dir ./"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.8.1"
+  }
+}
